@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\_C-Sharp\\_C-Sharp.csproj",
+      "projectUniqueName": "F:\\_Programacao\\_Alura\\_C-Sharp\\_C-Sharp.csproj",
       "projectName": "_C-Sharp",
-      "projectPath": "G:\\_C-Sharp\\_C-Sharp.csproj",
+      "projectPath": "F:\\_Programacao\\_Alura\\_C-Sharp\\_C-Sharp.csproj",
       "packagesPath": "C:\\Users\\renan\\.nuget\\packages\\",
-      "outputPath": "G:\\_C-Sharp\\obj\\",
+      "outputPath": "F:\\_Programacao\\_Alura\\_C-Sharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\renan\\AppData\\Roaming\\NuGet\\NuGet.Config",

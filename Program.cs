@@ -18,7 +18,7 @@
 }
 
 Dictionary<string, List<int>> registrationProducts = new Dictionary<string, List<int>>();
-registrationProducts.Add("a", new List<int> { 7, 9, 8 });
+registrationProducts.Add("a", new List<int>{ 7, 9, 8 });
 registrationProducts.Add("b", new List<int>{});
 
 void ViewMenu()
@@ -32,7 +32,8 @@ void ViewMenu()
     Console.WriteLine("Digite -1 - Para sair");
 
     Console.Write("\n Digite a sua opção: ");
-    int inputOption = int.Parse(Console.ReadLine()!);
+    string input = Console.ReadLine()!;
+    bool isInt = int.TryParse(input, out int inputOption);
 
     switch (inputOption)
     {
@@ -52,7 +53,8 @@ void ViewMenu()
             Console.WriteLine("Programa finalizado");
             break;
         default:
-            Console.WriteLine("Opção inválida");
+            ValidateInput("A opção ser um número inteiro", ViewMenu, isInt);
+            ValidateInput("Opção inválida", ViewMenu);
             break;
     }
 }
@@ -65,7 +67,7 @@ void RegisterProduct()
     string nameProduct = Console.ReadLine()!.ToLower();
     registrationProducts.Add(nameProduct, new List<int>());
     Console.WriteLine($"\nO produto {nameProduct} foi registrado com sucesso!");
-    Thread.Sleep(2000);
+    Thread.Sleep(3000);
     Console.Clear();
     ViewMenu();
 }
@@ -89,20 +91,26 @@ void EvaluateProduct()
 
     Console.Write("\nDigite o nome do produto que deseja avaliar: ");
     string nameProduct = Console.ReadLine()!.ToLower();
-    ValidateInput(registrationProducts.ContainsKey(nameProduct), "Produto não encontrado", EvaluateProduct);
-
-    Console.Write($"Dê a nota de 1 a 10 para o produto {nameProduct}: ");
-    string input = Console.ReadLine()!;
-    bool isInt = int.TryParse(input, out int evaluation);
-    ValidateInput(isInt, "A nota deve ser um número inteiro", EvaluateProduct);
-    bool evaluationAccept = evaluation >= 1 && evaluation <= 10;
-    ValidateInput(evaluationAccept, "A nota deve estar entre 1 e 10", EvaluateProduct);
-
-    registrationProducts[nameProduct].Add(evaluation);
-    Console.WriteLine($"\nVocê deu nota {evaluation} para o produto {nameProduct}");
-    Thread.Sleep(2000);
-    Console.Clear();
-    ViewMenu();
+    if (registrationProducts.ContainsKey(nameProduct))
+    {
+        Console.Write($"Dê a nota de 1 a 10 para o produto {nameProduct}: ");
+        string input = Console.ReadLine()!;
+        bool isInt = int.TryParse(input, out int evaluation);
+        ValidateInput("A nota deve ser um número inteiro", EvaluateProduct, isInt);
+        bool evaluationAccept = evaluation >= 1 && evaluation <= 10;
+        ValidateInput("A nota deve estar entre 1 e 10", EvaluateProduct, evaluationAccept);
+        registrationProducts[nameProduct].Add(evaluation);
+        Console.WriteLine($"\nVocê deu nota {evaluation} para o produto {nameProduct}");
+        Thread.Sleep(3000);
+        Console.Clear();
+        ViewMenu();
+    } else
+    {
+        Console.WriteLine($"Produto não encontrado");
+        Thread.Sleep(3500);
+        Console.Clear();
+        EvaluateProduct();
+    }
 }
 
 void ViewMedia()
@@ -113,9 +121,10 @@ void ViewMedia()
 
     Console.Write("\nDigite o nome do produto que deseja exibir a média: ");
     string nameProduct = Console.ReadLine()!.ToLower();
-    ValidateInput(registrationProducts.ContainsKey(nameProduct), "Produto não encontrado", ViewMedia);
-    
+    ValidateInput("Produto não encontrado", ViewMedia, registrationProducts.ContainsKey(nameProduct));
     List<int> evaluationsProduct = registrationProducts[nameProduct];
+    bool verifyEvaluation = !(evaluationsProduct.Count() == 0);
+    ValidateInput($"\nEsse produto ainda não possui nenhuma nota, avalie esse produto com uma nota", ViewMenu, verifyEvaluation);
     Console.WriteLine($"\nA média do produto {nameProduct} é: {evaluationsProduct.Average()}");
     Console.WriteLine("\nAperte qualquer tecla para voltar ao menu");
     Console.ReadKey();
@@ -140,11 +149,11 @@ void ViewTitle(string title)
     Console.WriteLine(pattern + "\n");
 }
 
-void ValidateInput(bool variable, string mensageError, Action functionReturn) {
+void ValidateInput(string mensageError, Action functionReturn, bool variable = false) {
     if (!variable)
     {
         Console.WriteLine($"\n{mensageError}");
-        Thread.Sleep(2000);
+        Thread.Sleep(3500);
         Console.Clear();
         functionReturn.Invoke();
     }
