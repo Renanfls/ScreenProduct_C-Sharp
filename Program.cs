@@ -101,13 +101,13 @@ void EvaluateProduct()
         ValidateInput("A nota deve estar entre 1 e 10", EvaluateProduct, evaluationAccept);
         registrationProducts[nameProduct].Add(evaluation);
         Console.WriteLine($"\nVocê deu nota {evaluation} para o produto {nameProduct}");
-        Thread.Sleep(3000);
+        Thread.Sleep(2000);
         Console.Clear();
         ViewMenu();
     } else
     {
         Console.WriteLine($"Produto não encontrado");
-        Thread.Sleep(3500);
+        Thread.Sleep(2000);
         Console.Clear();
         EvaluateProduct();
     }
