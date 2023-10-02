@@ -40,3 +40,17 @@ G:\_C-Sharp\obj\Debug\net7.0\refint\_C-Sharp.dll
 G:\_C-Sharp\obj\Debug\net7.0\_C-Sharp.pdb
 G:\_C-Sharp\obj\Debug\net7.0\_C-Sharp.genruntimeconfig.cache
 G:\_C-Sharp\obj\Debug\net7.0\ref\_C-Sharp.dll
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\bin\Debug\net7.0\_C-Sharp.exe
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\bin\Debug\net7.0\_C-Sharp.deps.json
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\bin\Debug\net7.0\_C-Sharp.runtimeconfig.json
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\bin\Debug\net7.0\_C-Sharp.dll
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\bin\Debug\net7.0\_C-Sharp.pdb
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\_C-Sharp.GeneratedMSBuildEditorConfig.editorconfig
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\_C-Sharp.AssemblyInfoInputs.cache
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\_C-Sharp.AssemblyInfo.cs
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\_C-Sharp.csproj.CoreCompileInputs.cache
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\_C-Sharp.dll
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\refint\_C-Sharp.dll
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\_C-Sharp.pdb
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\_C-Sharp.genruntimeconfig.cache
+F:\_Programacao\_Alura\_C-Sharp\ScreenProduct\obj\Debug\net7.0\ref\_C-Sharp.dll

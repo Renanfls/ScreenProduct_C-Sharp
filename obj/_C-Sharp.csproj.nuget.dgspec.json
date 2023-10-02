@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\_Programacao\\_Alura\\_C-Sharp\\_C-Sharp.csproj": {}
+    "F:\\_Programacao\\_Alura\\_C-Sharp\\ScreenProduct\\_C-Sharp.csproj": {}
   },
   "projects": {
-    "F:\\_Programacao\\_Alura\\_C-Sharp\\_C-Sharp.csproj": {
+    "F:\\_Programacao\\_Alura\\_C-Sharp\\ScreenProduct\\_C-Sharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\_Programacao\\_Alura\\_C-Sharp\\_C-Sharp.csproj",
+        "projectUniqueName": "F:\\_Programacao\\_Alura\\_C-Sharp\\ScreenProduct\\_C-Sharp.csproj",
         "projectName": "_C-Sharp",
-        "projectPath": "F:\\_Programacao\\_Alura\\_C-Sharp\\_C-Sharp.csproj",
+        "projectPath": "F:\\_Programacao\\_Alura\\_C-Sharp\\ScreenProduct\\_C-Sharp.csproj",
         "packagesPath": "C:\\Users\\renan\\.nuget\\packages\\",
-        "outputPath": "F:\\_Programacao\\_Alura\\_C-Sharp\\obj\\",
+        "outputPath": "F:\\_Programacao\\_Alura\\_C-Sharp\\ScreenProduct\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
