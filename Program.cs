@@ -16,11 +16,7 @@
     ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═════╝░░╚═════╝░░╚════╝░░░░╚═╝░░░ 
     {"\n"}");
 }
-
-Catalog catalogProducts = new()
-{
-    Name = "Produtos",
-};
+Catalog catalogProducts = new("Produtos");
 
 ViewMenu();
 
@@ -54,6 +50,7 @@ void ViewMenu()
             break;
         case 2:
             ViewListProduct();
+            ViewMenu();
             break;
         case 3:
             EvaluateProduct();
@@ -61,6 +58,7 @@ void ViewMenu()
             break;
         case 4:
             ViewMedia();
+            ViewMenu();
             break;
         case -1:
             Console.WriteLine("Programa finalizado");
@@ -81,6 +79,7 @@ void RegisterProduct()
     bool markIsString;
     string inputName;
     string inputMark;
+    string nameMark;
 
     do
     {
@@ -99,6 +98,8 @@ void RegisterProduct()
         Console.Write("Digite a marca do produto que deseja registrar: ");
         inputMark = Console.ReadLine()!.ToLower();
         markIsString = inputMark.All(char.IsDigit);
+        Mark mark = new(inputMark);
+        nameMark = mark.Name;
         ValidateInput("A marca deve ser um texto", !markIsString);
     } while (markIsString);
 
@@ -112,7 +113,7 @@ void RegisterProduct()
         ValidateInput("A quantidade deve ser um número inteiro", isInt);
     } while (!isInt);
 
-    Product product = new(){Name = inputName, Mark = inputMark, Quantity = quantity};
+    Product product = new(inputName, nameMark, quantity);
     catalogProducts.AddProduct(product);
     Console.WriteLine($"\nO produto {inputName} foi registrado com sucesso!");
     Thread.Sleep(3000);
@@ -129,7 +130,6 @@ void ViewListProduct()
         catalogProducts.ListProducts();
         Console.WriteLine("\nAperte qualquer tecla para voltar ao menu");
         Console.ReadKey();
-        ViewMenu();
     } else
     {
         Console.WriteLine("\nNenhum produto registrado, registre um produto");
@@ -211,7 +211,6 @@ void ViewMedia()
             Console.WriteLine($"\nA média do produto {inputName} é: {evaluationsProduct.Average()}");
             Console.WriteLine("\nAperte qualquer tecla para voltar ao menu");
             Console.ReadKey();
-            ViewMenu();
         } else 
         {
             Console.Clear();

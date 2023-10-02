@@ -1,5 +1,9 @@
 class Catalog
 {
+  public Catalog(string name)
+  {
+    Name = name;
+  }
   private Dictionary<Product, List<int>> registrationProducts = new(){};
   public string Name { get; set; }
 
