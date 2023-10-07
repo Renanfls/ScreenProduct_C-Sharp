@@ -5,7 +5,7 @@ class Mark
     Name = name;
   }
   private List<Catalog> catalogs = new();
-  public string Name { get; set; }
+  public string Name { get; }
 
   public void ViewCatalogs()
   {

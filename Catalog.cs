@@ -5,7 +5,7 @@ class Catalog
     Name = name;
   }
   private Dictionary<Product, List<int>> registrationProducts = new(){};
-  public string Name { get; set; }
+  public string Name { get; }
 
   public void AddProduct(Product product)
   {

@@ -6,9 +6,9 @@ class Product
     Mark = mark;
     Quantity = quantify;
   }
-  public string Name { get; set; }
+  public string Name { get; }
   public string Mark { get; }
-  public int Quantity { get; set; } = 0;
+  public int Quantity { get; } = 0;
   public string DescriptionProduct 
   { 
     get 
