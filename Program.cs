@@ -34,6 +34,7 @@ void ViewMenu()
     Console.WriteLine("-1 - Sair");
 
     int inputOption;
+    
     bool isInt;
 
     do
