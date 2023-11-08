@@ -1,3 +1,5 @@
+namespace ScreenProduct.Models;
+
 class Catalog
 {
   public Catalog(string name)

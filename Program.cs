@@ -1,4 +1,6 @@
-﻿void Signature() 
+﻿using ScreenProduct.Models;
+
+void Signature() 
 {
     Console.WriteLine($@"
     ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗
@@ -79,7 +81,7 @@ void RegisterProduct()
     bool markIsString;
     string inputName;
     string inputMark;
-    string nameMark;
+    Mark mark;
 
     do
     {
@@ -98,8 +100,7 @@ void RegisterProduct()
         Console.Write("Digite a marca do produto que deseja registrar: ");
         inputMark = Console.ReadLine()!.ToLower();
         markIsString = inputMark.All(char.IsDigit);
-        Mark mark = new(inputMark);
-        nameMark = mark.Name;
+        mark = new(inputMark);
         ValidateInput("A marca deve ser um texto", !markIsString);
     } while (markIsString);
 
@@ -113,7 +114,7 @@ void RegisterProduct()
         ValidateInput("A quantidade deve ser um número inteiro", isInt);
     } while (!isInt);
 
-    Product product = new(inputName, nameMark, quantity);
+    Product product = new(inputName, mark, quantity);
     catalogProducts.AddProduct(product);
     Console.WriteLine($"\nO produto {inputName} foi registrado com sucesso!");
     Thread.Sleep(3000);
